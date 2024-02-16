@@ -1,0 +1,132 @@
+body{
+    font: 500 18px/1.1 "Roboto", sans-serif;
+    font-size: 25px;
+}
+
+.icon-image{
+	width: 45px;
+}
+  
+.esc-image{
+	width: 80px;
+}
+
+.esc-button{
+	width: 120px;
+	background-color: white;
+	border-color: black;
+	border-radius: 8px;
+	cursor: pointer;
+	border-style: solid;
+}
+
+.a-esc{
+	position: fixed;
+	bottom: 40px;
+	left: 16px;
+}
+
+.a-esc:hover{
+	opacity: 60%;
+}
+  
+.sidenav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav .a-side {
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  padding-top: 46px;
+  padding-right: 8px;
+  padding-bottom: 6px;
+  padding-left: 16px;
+}
+
+.sidenav .a-side:hover {
+  opacity: 60%;
+}
+
+.sub-sidenav p{
+  color: #f1f1f1;
+  font-size: 35px;
+  font-weight: bold;
+  padding-bottom: 20px;
+  border-bottom: 4px solid;
+  text-align:center;
+  padding-right: 10px;
+  user-select: none;
+}
+
+.sub-sidenav img{
+	width: 140px;
+	margin-top: -30px;
+	margin-bottom: -60px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding-right: 2px;
+	user-select: none;
+}
+
+.book-display{
+	position: absolute;
+	left: 740px;
+	top: 165px;
+	width: 700px;
+}
+
+.img-thumbnail{
+  position: absolute;
+  left: 355px;
+  top: 165px;
+  width: 300px
+}
+
+.text-container{
+	text-align: left;
+	background-color: white;
+	padding: 20px;
+	border: solid 10px;
+	border-radius: 16px;
+	border-color: #D3D3D3;
+}
+
+.cat-title{
+	color: #4169E1;	
+	font-size: 30px;
+}
+
+.subtext-container-1, .subtext-container-2, .subtext-container-3, .subtext-container-4 {
+	display: flex;
+	align-items: baseline;
+	gap: 20px;
+}
+
+.back-button{
+  position: absolute;
+  cursor: pointer;
+  background-color: #4169E1;
+  border-color: #4169E1;
+  border-style: solid;
+  border-radius: 5px;
+}
+
+.back-button:hover{
+	background-color: #1d43b6;
+	border-color: #1d43b6;
+}
+
+.back-image{
+	width: 50px;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Aggiungi Autore</title>
+		<link rel="stylesheet" th:href="@{css/stile_aggiungi.css}">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+		<link rel="icon" href="image/markerImage.png">
+	</head>
+	<body>
+		<div class="sidenav">
+			<div class="sub-sidenav">
+				<img src="image/books.png" >
+				<p>ADMIN</p>
+			</div>
+			<a class="a-side" th:href="@{/autori}" th:text="'Autori'"></a>
+			<a class="a-side" th:href="@{/categorie}" th:text="'Categorie'"></a>
+			<a class="a-side" th:href="@{/libri}" th:text="'Libri'"></a>
+			<a class="a-esc" th:href="@{/}">
+    			<button class= "esc-button">
+        			<img src="image/esc2.png" class="esc-image">
+      			</button>
+    		</a>	
+		</div>
+		<h4 th:text="'Aggiungi Autore'"></h4>
+		<div>
+			 <form method = "post" th:object = "${autore}">
+				 <input type = "text" th:field = "*{nome}" placeholder="Nome" required>
+				 <p th:if = "${#fields.hasErrors('nome')}" th:errors="*{nome}" style = "color:red"></p>
+				 <input type = "text" th:field = "*{cognome}" placeholder="Cognome" required>
+				 <p th:if = "${#fields.hasErrors('cognome')}" th:errors="*{cognome}" style = "color:red"></p>
+				 <input class="check-button" type = "submit" th:value = "'Registra'">
+			 </form>
+			 <a th:href="@{/autori}">
+    			<button class="back-button">
+    				<img src="image/back.png" class="back-image">
+    			</button>
+    		 </a>
+		</div>
+	</body>
+</html>

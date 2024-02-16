@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Autori</title>
+		<link rel="stylesheet" th:href="@{css/stile.css}">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+		<link rel="icon" href="image/markerImage.png">
+	</head>
+	<body>
+		<div class="sidenav">
+			<div class="sub-sidenav">
+				<img src="image/books.png" >
+				<p>ADMIN</p>
+			</div>
+			<a class="a-side" th:href="@{/autori}" th:text="'Autori'"></a>
+			<a class="a-side" th:href="@{/categorie}" th:text="'Categorie'"></a>
+			<a class="a-side" th:href="@{/libri}" th:text="'Libri'"></a>
+			<a class="a-esc" th:href="@{/}">
+	    		<button class= "esc-button">
+	        		<img src="image/esc2.png" class="esc-image">
+	      		</button>
+	    	</a>
+		</div>
+		<div class="top-line">
+			<h1>AUTORI</h1>
+			<a th:href="@{/aggiungiautori}">
+	    		<button class="add-button">+ Autore</button>
+	    	</a>
+	    </div>
+	    <table class="tabella">
+	        <thead>
+	            <tr>
+	                <th>Nome</th>
+	                <th>Cognome</th>
+	            </tr>
+	        </thead>
+	        <tbody>
+	            <tr th:each="a : ${autori}">
+	                <td th:text="${a.nome}"></td>
+	                <td th:text="${a.cognome}"></td>
+	                <td class="modify-container"><a th:href="@{/aggiungiautori(id=${a.id})}" 
+						class="btn btn-primary btn-sm"><img src="image/modify.png"></a></td>
+					<td class="delete-container"><a th:href="@{autori/cancellaautore(id=${a.id})}" 
+						class="btn btn-danger btn-sm"><img src="image/delete.png"></a></td>
+	            </tr>
+	        </tbody>
+	    </table>
+	</body>
+</html>

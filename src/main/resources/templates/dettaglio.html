@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Dettaglio Libro</title>
+<link rel="stylesheet" th:href="@{css/stile_dettaglio.css}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="icon" href="image/markerImage.png">
+</head>
+<body>
+	<div class="sidenav">
+		<div class="sub-sidenav">
+			<img src="image/books.png" >
+			<p>ADMIN</p>
+		</div>
+		<a class="a-side" th:href="@{/autori}" th:text="'Autori'"></a>
+		<a class="a-side" th:href="@{/categorie}" th:text="'Categorie'"></a>
+		<a class="a-side" th:href="@{/libri}" th:text="'Libri'"></a>
+		<a class="a-esc" th:href="@{/}">
+    		<button class= "esc-button">
+        		<img src="image/esc2.png" class="esc-image">
+      		</button>
+    	</a>	
+	</div>
+	<img th:if="${libro.copertina == null}" th:src="@{image/markerImage.png}" class="img-thumbnail" alt="libro">
+		<img th:if="${libro.copertina != null}" th:src="@{${libro.copertina}}" class="img-thumbnail" alt="libro">
+	<div class="book-display">
+		<div class="text-container">
+		<div class="subtext-container-1">
+		<h4 class="cat-title">Titolo:</h4>
+		<h4 th:text="${libro.titolo}"></h4>
+		</div>
+		<div class="subtext-container-2">
+		<h4 class="cat-title">Autore:</h4>
+		<h4 th:text="${libro.autore.nome} + ' ' + ${libro.autore.cognome}"></h4>
+		</div>
+		<div class="subtext-container-3">
+		<h4 class="cat-title">Categoria:</h4>
+		<h4 th:text="${libro.categoria.descrizione}"></h4>
+		</div>
+		<div class="subtext-container-4">
+		<h4 class="cat-title">Trama:</h4>
+		<h4 th:text="${libro.trama}"></h4>
+		</div>
+		<a th:href="@{/libri}">
+    	<button class="back-button">
+    		<img src="image/back.png" class="back-image">
+    	</button>
+    	</a>
+		</div>
+	</div>
+</body>
+</html>

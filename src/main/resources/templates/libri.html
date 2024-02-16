@@ -1,0 +1,59 @@
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	<meta charset="UTF-8">
+		<title>Libri</title>
+		<link rel="stylesheet" th:href="@{css/stile.css}">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+		<link rel="icon" href="image/markerImage.png">
+	</head>
+	<body>
+		<div class="sidenav">
+			<div class="sub-sidenav">
+				<img src="image/books.png" >
+				<p>ADMIN</p>
+			</div>
+			<a class="a-side" th:href="@{/autori}" th:text="'Autori'"></a>
+			<a class="a-side" th:href="@{/categorie}" th:text="'Categorie'"></a>
+			<a class="a-side" th:href="@{/libri}" th:text="'Libri'"></a>
+			<a class="a-esc" th:href="@{/}">
+	    		<button class= "esc-button">
+	        		<img src="image/esc2.png" class="esc-image">
+	      		</button>
+	    	</a>	
+		</div>
+		<div class="top-line">
+			<h1>LIBRI</h1>
+			<a th:href="@{/aggiungilibri}">
+	    		<button class="add-button">+ Libro</button>
+	    	</a>
+	    </div>
+	    <table class="tabella">
+	        <thead>
+	            <tr>
+	                <th>Titolo</th>
+	                <th>Copertina</th>
+	                <th>Categoria Letteraria</th>
+	            </tr>
+	        </thead>
+	        <tbody>
+	            <tr th:each="l : ${libri}">
+	                <td th:text="${l.titolo}"></td>
+	                <td>
+						<img th:if="${l.copertina == null}" th:src="@{image/markerImage.png}" class="img-thumbnail" alt="libro"
+							>
+						<img th:if="${l.copertina != null}" th:src="@{${l.copertina}}" class="img-thumbnail" alt="libro"
+							>
+					</td>
+					<td th:text="${l.categoria.descrizione}"></td>
+					<td class="info-container"><a th:href="@{/dettaglio(id=${l.id})}" 
+						class="btn btn-primary btn-sm"><img class="icon-image" src="image/info.png"></a></td>
+	                <td class="modify-container"><a th:href="@{/aggiungilibri(id=${l.id})}" 
+						class="btn btn-primary btn-sm"><img class="icon-image" src="image/modify.png"></a></td>
+					<td class="delete-container"><a th:href="@{libri/cancellalibro(id=${l.id})}" 
+						class="btn btn-danger btn-sm"><img class="icon-image" src="image/delete.png"></a></td>
+	            </tr>
+	        </tbody>
+	    </table>
+	</body>
+</html>

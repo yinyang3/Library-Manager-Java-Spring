@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Home</title>
+<link rel="stylesheet" th:href="@{css/stile_home.css}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="icon" href="image/markerImage.png">
+</head>
+<body>
+<img src="image/books.png">
+<p>AREA ADMIN</p>
+<div>
+	<a th:href="@{/autori}">
+    <button>AUTORI</button>
+    </a>
+    <a th:href="@{/categorie}">
+    <button>CATEGORIE</button>
+    </a>
+    <a th:href="@{/libri}">
+    <button>LIBRI</button>
+    </a>
+</div>
+</body>
+</html>
